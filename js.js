@@ -8,6 +8,8 @@ function botao(){
     document.getElementById("Numero").textContent = "Número que você colocou: " + valor
     if(valor == numero){
         document.getElementById("resultado").textContent = "Parabéns! Você acertou!"
+        document.getElementById("valor").disabled = true
+        document.getElementById("butao").disabled = true
     }else if(valor > numero){
         document.getElementById("resultado").textContent = "O número é menor do que o que você colocou."
     }
@@ -20,5 +22,8 @@ function botao(){
         document.getElementById("resultado").textContent = "Suas tentativas acabaram! O número era: " + numero
         document.getElementById("valor").disabled = true
         document.getElementById("butao").disabled = true
-    }    
+    } 
+    if(valor > 100 || valor < 0){
+        document.getElementById("resultado").textContent = "Por favor, insira um número entre 0 e 100."
+    }
 }
